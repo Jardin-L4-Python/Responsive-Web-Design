@@ -1,0 +1,514 @@
+@import url('https://fonts.googleapis.com/css2?family=Bubblegum+Sans&family=Lilita+One&family=Oswald:wght@200..700&display=swap');
+/* Target device: Desktop device */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: rgb(236, 207, 207);
+    overflow-y: auto; 
+}
+body.lock-scroll {
+    overflow: hidden;
+}
+#login-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+.login-container {
+    background-color: #fff6f6;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 660px;
+    height: 420px;
+    padding: 20px;
+}
+#login-screen h2 {
+    font-size: 2em;
+    color: #813677;
+}
+#login-screen h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+hr {
+    width: 660px;
+    margin-top: 45px;
+    margin-bottom: 30px;
+}
+h3 {
+    color: rgb(85, 2, 27);
+    font-size: 110%
+}
+h4 {
+    font-size: 110%;
+}
+.form-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin: 10px 0;
+    width: 100%;
+    max-width: 400px;
+    margin-left: 160px;
+}
+.form-group label {
+    font-size: 18px;
+    color: #333;
+    width: 100px;
+    margin-right: 10px;
+    text-align: left;
+    margin-top: 12px;
+}
+input[type="text"], input[type="password"] {
+    width: 210px;
+    padding: 5px;
+    font-size: 18px;
+    box-sizing: border-box;
+    border-radius: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+    margin-top: 12px;
+}
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+button {
+    padding: 4px 14px;
+    font-size: 16px;
+    border-radius: 20px;
+    background-color: rgb(119, 60, 60);
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: -260px;
+}
+button:hover {
+    background-color: rgb(58, 10, 58);
+}
+#create-acc-forgot-pass {
+    display: flex;
+    justify-content: center;
+    margin-top: -20px;
+    margin-left: 73px;
+    width: 100%;
+}
+#create-acc-forgot-pass a {
+    color: #86587f;
+    text-decoration: none;
+    margin-right: 40px;
+    font-size: 13px;
+}
+#create-acc-forgot-pass a:hover {
+    text-decoration: underline;
+}
+#error-message {
+    color: red;
+    display: none;
+}
+#main-page {
+    display: none;
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow-y: auto;
+    background-color: rgb(236, 207, 207); 
+}
+#dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #eed6f5;
+    padding: 15px 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 20px; 
+    border-radius: 8px;
+}    
+#logo-container {
+    flex-grow: 1;
+}
+#logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #380631;
+}
+#userprofile-container {
+    display: flex;
+    align-items: center;
+}
+#user-profile {
+    width: 80px; 
+    height: 80px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    cursor: pointer;
+}
+#dark-mode-toggle {
+    color: rgb(114, 12, 29);
+    margin-left: 0;
+    margin-right: 30px;
+    cursor: pointer;
+    width: 100%; 
+    max-width: 100%; 
+    font-family: "Bubblegum Sans", serif;
+    height: auto; 
+    padding: 8px; 
+    border: none; 
+    background: none; 
+    font-size: 24px; 
+    display: flex; 
+    align-items: center; 
+    justify-content: center; 
+    flex-wrap: wrap; 
+    text-align: center; 
+    gap: 10px; 
+}
+/* Dashboard Content Section */
+#dashboard-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr; 
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "reminders quickadd"
+        "lecture notes"
+        "schedule events"
+        "calendar random";
+    gap: 20px; 
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 20px; 
+    padding: 20px;
+    background-color: #eed6f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+#main-page > #dashboard-content {
+    margin-top: 8px;
+}
+#reminders-section {
+    grid-area: reminders;
+}
+#lecture-section {
+    grid-area: lecture;
+}
+#file-section {
+    grid-area: notes;
+}
+#schedule-section {
+    grid-area: schedule;
+}
+#events-section {
+    grid-area: events;
+}
+#calendar-section {
+    grid-area: calendar;
+}
+#notes-section {
+    grid-area: random;
+}
+#calendar-section img {
+    max-width: 100%;
+    height: auto;
+    width: 380px;
+    display: block;
+    margin: 0 auto; 
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: #fff6f6;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 200px; 
+}
+h2 {
+    font-size: 18px;
+    color: rgb(92, 10, 92);
+    margin-bottom: 5px;
+    font-weight: bold; 
+}
+h6 {
+    font-size: 18px;
+    color:rgb(49, 21, 37);
+    margin-left: 0;
+    margin-right: 30px;
+    cursor: pointer;
+    width: auto; 
+    height: auto; 
+    padding: 8px; 
+    border: none; 
+    background: none; 
+    display: inline-block; 
+}
+.quick-add-btn {
+    cursor: pointer;
+    color: rgb(68, 14, 50);
+    font-size: 12px;
+    margin: 5px 0;
+    padding: 8px 13px;
+    background-color: #d8a8a8;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.quick-add-btn:hover {
+    background-color: #ccc;
+}
+#main-footer {
+    color: #411341;
+    text-align: center;
+    padding: 15px 20px;
+    font-size: 16px;
+    background-color: #fff6f6;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+.footer-container p {
+    margin: 0;
+    flex-grow: 1; 
+}
+.footer-links a:hover {
+    text-decoration: underline;
+}
+/* Modal styles for Add Reminder */
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(83, 49, 81, 0.2);
+    border-radius: 8px;
+    border-color: rgb(182, 132, 171);
+    background-color: rgb(255, 242, 242);
+    z-index: 1000; 
+    padding: 20px;
+    display: none; 
+}
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+.modal h2 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #813677;
+}
+.modal-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-top: 10px; 
+}
+#reminder-input {
+    width: 90%;
+    padding: 10px;
+    margin-bottom: 10px; 
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    border-color: rgb(182, 132, 171);
+    font-size: 16px;
+    text-align: center;
+}
+#save-reminder-btn,
+#close-modal-btn {
+    padding: 12px 20px; 
+    font-size: 16px; 
+    border: none;
+    border-radius: 6px; 
+    cursor: pointer;
+    color: #d8baba;
+    transition: background-color 0.3s ease;
+    margin: 0 10px;
+    width: 150px; 
+}
+#save-reminder-btn:hover,
+#close-modal-btn:hover {
+    background-color: #5a254d;
+}
+#close-modal-btn {
+    background-color: #f44336; 
+}
+#close-modal-btn:hover {
+    background-color: #d32f2f; 
+}
+
+/* Target device: Mobile devices */
+@media (max-width: 600px) {
+#login-screen {
+    height: auto;
+    padding: 20px;
+}
+.login-container {
+    width: 90%;
+    height: auto;
+}
+.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+}
+.form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+}
+.button-container {
+    flex-direction: column;
+}
+button {
+    width: 100%;
+    margin-left: 0;
+}
+#dashboard-header, #dashboard-content, #main-footer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#dashboard-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#dashboard-content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "reminders""quickadd"
+    "lecture""notes"
+    "schedule""events"
+    "calendar""random";
+}
+section {
+    height: auto;
+}
+#dark-mode-toggle {
+    font-size: 20px;
+}
+}
+
+/* Target device: Tablet devices */
+@media (min-width: 601px) and (max-width: 1024px) {
+#login-screen {
+    height: auto;
+    padding: 20px;
+}
+.login-container {
+    width: 80%;
+    height: auto;
+}
+.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+}
+.form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+}
+.button-container {
+    flex-direction: column;
+}
+button {
+    width: 100%;
+    margin-left: 0;
+}
+#dashboard-header, #dashboard-content, #main-footer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#dashboard-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+    "reminders quickadd"
+    "lecture notes"
+    "schedule events"
+    "calendar random";
+}
+section {
+    height: auto;
+}
+#dark-mode-toggle {
+    font-size: 22px;
+}
+}
+
+/* Target device: iPad devices (portrait and landscape) */
+@media (min-width: 768px) and (max-width: 1024px) and (min-device-width: 768px) {
+#login-screen {
+    height: auto;
+    padding: 20px;
+}
+.login-container {
+    width: 80%;
+    height: auto;
+}
+.form-group {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 0;
+}
+.form-group label {
+    width: 100%;
+    margin-bottom: 5px;
+    text-align: left;
+}
+input[type="text"], input[type="password"] {
+    width: 100%;
+}
+.button-container {
+    flex-direction: column;
+}
+button {
+    width: 100%;
+    margin-left: 0;
+}
+#dashboard-header, #dashboard-content, #main-footer {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+#dashboard-content {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "reminders quickadd"
+        "lecture notes"
+        "schedule events"
+        "calendar random";
+}
+section {
+    height: auto;
+}
+}
+#dark-mode-toggle {
+    font-size: 24px;
+}

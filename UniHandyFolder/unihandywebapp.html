@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="unihandywebapp.css">
+        <script src="webapp.js" defer></script>
+        <title>UniHandy Planner - Single Web App Page</title>
+    </head>
+    <body>
+        <!-- Login Screen Container -->
+         <div id="login-screen">
+            <div class="login-container">
+                <!-- Welcome to UniHandy Section -->
+                 <h2>Welcome to UniHandy</h2><br>
+                 <h3>The ultimate planner for tasks, reminders, schedules, deadlines, and everything you need to stay on track.</h3>
+                 <hr>
+                 <!-- User Login Form -->
+                  <h2>User Login</h2>
+                  <form id="login-form">
+                    <div class="form-group">
+                        <label for="username">Username:</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password:</label>
+                        <input type="password" id="password" name="password" required><br><br>
+                    </div>
+                    <div class="button-container">
+                        <button type="submit">LOGIN</button>
+                    </div>
+                    <div id="create-acc-forgot-pass">
+                        <a href="#" id="create-account">Create Account</a>
+                        <a href="#" id="forgot-password">Forgot Password?</a>
+                    </div>
+                </form>
+                <p id="error-message">Invalid login details</p>
+            </div>
+        </div>
+        <!-- Main Page -->
+         <div id="main-page" style="display: none;">
+            <header id="dashboard-header">
+                <div id="logo-container">
+                    <h1 id="logo">UniHandy</h1>
+                </div>
+                <button id="dark-mode-toggle">
+                    😊 You can do it! Keep going! 😊 &nbsp;&nbsp;&nbsp;&nbsp;📑 📊 🧩 🌙
+                </button>
+                <div id="userprofile-container">
+                    <img src="path-to-userprofile.png" alt="userprofile" id="user-profile"/>
+                </div>
+            </header>
+            <!-- Add Reminder Modal -->
+             <div id="add-reminder-modal" class="modal" style="display: none;">
+                <div class="modal-content">
+                    <h2>Add Reminder</h2>
+                    <input type="text" id="reminder-input" placeholder="Enter your reminder here">
+                    <div class="modal-buttons">
+                        <button id="save-reminder-btn">Save</button>
+                        <button id="close-modal-btn">Cancel</button>
+                    </div>
+                </div>
+            </div>
+            <!-- Dashboard Content -->
+             <div id="dashboard-content">
+                <section id="reminders-section">
+                    <h2>Reminders 🔔</h2>
+                    <div id="reminders-container"></div>
+                </section>
+                <section id="quick-add-section">
+                    <h2>Quick Add Features ➕</h2>
+                    <button class="quick-add-btn">Add Reminder</button>
+                    <button class="quick-add-btn">Add Event</button>
+                    <button class="quick-add-btn">Add Lecture</button>
+                    <button class="quick-add-btn">Add File</button>
+                </section>
+                <section id="lecture-section">
+                    <h2>Lectures 📚</h2>
+                    <h3>Lecture 1 | Chemistry</h3>
+                    <h3>Lecture 5 | Pharmacology</H3>
+                        <div id="lectures-container"></div>
+                    </section>
+                    <section id="file-section">
+                        <h2>File 📁</h2>
+                        <h3>Chemistry Activity</h3>
+                        <h3>Pharamacology Coversheet</h3>
+                        <div id="file-container"></div>
+                    </section>
+                    <section id="schedule-section">
+                        <h2>Class Schedule 🕒</h2>
+                        <h3>MON | 9AM - 2:00PM | CHEMISTRY</h3>
+                        <h3>TUE | 9AM - 2:00PM | BIOLOGY</h3>
+                        <h3>WED | 9AM - 2:00PM | PHARMACOLOGY</h3>
+                        <div id="schedule-container"></div>
+                    </section>
+                    <section id="events-section">
+                        <h2>Events 🎉</h2>
+                        <h3>February 15: Sports Day!</h3>
+                        <h3>February 20: Mental Health Day!</h3>
+                        <h3>February 25: Spring Break!</h3>
+                        <div id="events-container"></div>
+                    </section>
+                    <section id="calendar-section">
+                        <h2>University Calendar 📅</h2>
+                        <img src="unicalendar.png" alt="unicalendarphoto">
+                        <div id="calendar-container"></div>
+                    </section>
+                    <section id="notes-section">
+                        <h2>Notes ✏️</h2>
+                        <h3>Email: userannemelon</h3>
+                        <h3>3 Classes, 2 Sem</h3>
+                        <div id="notes-container"></div>
+                    </section>
+                </div>
+                <footer id="main-footer">
+                    <div class="footer-container">
+                        <p>&copy; 2025 UniHandy.</p>
+                    </div>
+            </footer>
+        </div>
+    </body>
+</html>
